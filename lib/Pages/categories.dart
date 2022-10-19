@@ -28,10 +28,10 @@ class _CategoriesState extends State<Categories> {
           Category_Products(
             press: () {
               //Se define la funcion press, que en este caso es una función de tipo VoidCallback (category)
-              widget.change("electronics");
+              widget.change("jewelery");
             },
-            text: "electronics",
-            image: "assets/prenda1.jpg",
+            text: "jewelery",
+            image: "assets/jewelery.png",
           ),
           //Para que hay un espacio entre el elemento de arriba y el de abajo
           SizedBox(
@@ -39,27 +39,10 @@ class _CategoriesState extends State<Categories> {
           ),
           Category_Products(
             press: () {
-              widget.change("jewelery");
-            },
-            text: "jewelery",
-            image: "assets/prenda1.jpg",
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Category_Products(
-            press: () {
               widget.change("men's clothing");
             },
             text: "men's clothing",
-            image: "assets/prenda1.jpg",
-          ),
-          Category_Products(
-            press: () {
-              widget.change("men's clothing");
-            },
-            text: "men's clothing",
-            image: "assets/prenda1.jpg",
+            image: "assets/mensclothing.png",
           ),
           SizedBox(
             height: 10,
@@ -67,8 +50,18 @@ class _CategoriesState extends State<Categories> {
           Category_Products(
             press: () {},
             text: "women's clothing",
-            image: "assets/prenda1.jpg",
+            image: "assets/womensclothing.png",
           ),
+          SizedBox(
+            height: 10,
+          ),
+          Category_Products(
+            press: () {
+              widget.change("electronics");
+            },
+            text: "electronics",
+            image: "assets/electronics.png",
+          )
         ],
       ),
     );

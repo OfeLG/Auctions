@@ -34,9 +34,16 @@ class Category_Products extends StatelessWidget {
                 SizedBox(
                   height: 12,
                 ),
-                Image.asset(
-                  image,
-                  height: 40,
+                Container(
+                  width: 30,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                  child: Image.asset(
+                    image,
+                    height: 40,
+                  ),
                 ),
               ],
             ),
