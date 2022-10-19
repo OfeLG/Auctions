@@ -57,10 +57,12 @@ class CustomAppBar extends StatelessWidget {
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: Image.asset(
-            "assets/profile.jpg",
+            borderRadius: new BorderRadius.circular(100.0),
+            image: DecorationImage(
+              image: AssetImage(
+                "assets/profile.jpg",
+              ),
+            ),
           ),
         ),
       ],

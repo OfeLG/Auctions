@@ -32,8 +32,7 @@ class _Details extends State<Details> {
         decoration: BoxDecoration(
           color: backgraundApp,
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: ListView(
           children: [
             //Se crea el contenedor que tendrá cada imagen
             Container(
@@ -78,7 +77,7 @@ class _Details extends State<Details> {
             ),
             // Se crea un listTile que contenga el nombre, la descripción y el icono de favorito
             Container(
-              height: 80,
+              height: 120,
               width: 400,
               child: ListTile(
                 title: Text(
@@ -100,7 +99,7 @@ class _Details extends State<Details> {
             ),
             Center(
               child: Container(
-                height: 220,
+                height: 300,
                 width: 350,
                 child: Text(
                   widget.product.description,
