@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 // Se importan los archivos del proyecto que tienen relación con esta pagina
 import 'package:auctions_parcial/constants.dart';
 
+//Se usará un estateles ya que solo se mostrarán las categorias
 class Category_Products extends StatelessWidget {
   const Category_Products({
+    //Se indica que datos se desean mostrar
     Key? key,
     required this.image,
     required this.text,
@@ -19,6 +21,7 @@ class Category_Products extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
+      //Se utiliza un GestureDetector y en el opTap para devolver un valor en caso de que se seleccione el contendor de la categoria
       child: GestureDetector(
         onTap: press,
         child: Container(
@@ -29,7 +32,7 @@ class Category_Products extends StatelessWidget {
               children: [
                 Text(text),
                 SizedBox(
-                  height: 10,
+                  height: 12,
                 ),
                 Image.asset(
                   image,

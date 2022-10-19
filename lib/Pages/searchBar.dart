@@ -3,12 +3,23 @@ import 'package:flutter/material.dart';
 
 // Se importan los archivos del proyecto que tienen relación con esta pagina
 import 'package:auctions_parcial/constants.dart';
+import 'package:auctions_parcial/Pages/searching.dart';
+import 'package:auctions_parcial/Models/model_products.dart';
 
-class SearchBar extends StatelessWidget {
+class SearchBar extends StatefulWidget {
+  final List<ModelProducts> productsList;
+  final void Function() get_all;
   const SearchBar({
     Key? key,
+    required this.get_all,
+    required this.productsList,
   }) : super(key: key);
 
+  @override
+  State<SearchBar> createState() => _SearchBarState();
+}
+
+class _SearchBarState extends State<SearchBar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -30,6 +41,12 @@ class SearchBar extends StatelessWidget {
                     ],
                   ),
                   child: TextField(
+                    //Se indica que al darle click TextField se llama automaticamente una función de flutter
+                    onTap: () {
+                      showSearch(
+                          context: context,
+                          delegate: Searching(widget.productsList));
+                    },
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.symmetric(vertical: 14),
                       //Se quita la linea inferior que tiene por defecto el TextField
@@ -45,7 +62,7 @@ class SearchBar extends StatelessWidget {
               SizedBox(width: 10),
               //Se crea el boton de clasificación que tendrá la app
               Container(
-                // Este contenedor tendrá dento el icono de IconButton
+                // Este contenedor tendrá dento el icono de
                 decoration: BoxDecoration(
                   color: primaryColor, //Se aplica color al contendor
                   borderRadius: BorderRadius.circular(20),
@@ -55,8 +72,10 @@ class SearchBar extends StatelessWidget {
                   ],
                 ),
                 child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.sort_by_alpha),
+                  onPressed: () {
+                    widget.get_all();
+                  },
+                  icon: Icon(Icons.casino),
                 ),
               ),
             ],

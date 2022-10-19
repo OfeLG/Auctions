@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 // Se importan los archivos del proyecto que tienen relación con esta pagina
 import 'package:auctions_parcial/constants.dart';
 import 'package:auctions_parcial/Pages/category_products.dart';
-import 'package:flutter/rendering.dart';
 
 class Categories extends StatefulWidget {
-  const Categories({Key? key}) : super(key: key);
+  //Se declara una función que tendrá como fin ejecutar la consulta de una categoria en especifico
+  final void Function(String) change; //La funcion se definirá en HomeBody
+  Categories({Key? key, required this.change}) : super(key: key);
 
   @override
   State<Categories> createState() => _CategoriesState();
@@ -23,9 +24,41 @@ class _CategoriesState extends State<Categories> {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
+          //Category_Products tiene el diseño del contenedor de la categoria (Así que solo se llama y se le pasan los datos a contener)
           Category_Products(
-            press: () {},
-            text: "Vestidos",
+            press: () {
+              //Se define la funcion press, que en este caso es una función de tipo VoidCallback (category)
+              widget.change("electronics");
+            },
+            text: "electronics",
+            image: "assets/prenda1.jpg",
+          ),
+          //Para que hay un espacio entre el elemento de arriba y el de abajo
+          SizedBox(
+            height: 10,
+          ),
+          Category_Products(
+            press: () {
+              widget.change("jewelery");
+            },
+            text: "jewelery",
+            image: "assets/prenda1.jpg",
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Category_Products(
+            press: () {
+              widget.change("men's clothing");
+            },
+            text: "men's clothing",
+            image: "assets/prenda1.jpg",
+          ),
+          Category_Products(
+            press: () {
+              widget.change("men's clothing");
+            },
+            text: "men's clothing",
             image: "assets/prenda1.jpg",
           ),
           SizedBox(
@@ -33,24 +66,8 @@ class _CategoriesState extends State<Categories> {
           ),
           Category_Products(
             press: () {},
-            text: "Abrigos",
-            image: "assets/prenda2.jpg",
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Category_Products(
-            press: () {},
-            text: "Camison",
-            image: "assets/prenda3.jpg",
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Category_Products(
-            press: () {},
-            text: "Faldas",
-            image: "assets/prenda4.jpg",
+            text: "women's clothing",
+            image: "assets/prenda1.jpg",
           ),
         ],
       ),

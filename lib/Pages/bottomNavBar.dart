@@ -1,4 +1,5 @@
 // Se importa el paquete material.dart
+import 'package:auctions_parcial/Models/model_products.dart';
 import 'package:flutter/material.dart';
 
 // Se importan los archivos del proyecto que tienen relación con esta pagina
@@ -86,6 +87,7 @@ class BottomNavBar extends StatelessWidget {
               icon: Icon(
                 Icons.shopping_basket,
                 size: 40,
+                //Verificar si el icono ha sido seleccionado
                 color: MenuState.valueProposition == selectedMenu
                     ? primaryColor
                     : inactiveColor,

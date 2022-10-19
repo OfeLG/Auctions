@@ -20,7 +20,11 @@ class ModelProducts {
   late String imgURL;
 
   ModelProducts(
-      this.category, this.title, this.price, this.description, this.imgURL);
+      {required this.category,
+      required this.title,
+      required this.price,
+      required this.description,
+      required this.imgURL});
 
   ModelProducts.fromJsonMap(Map<String, dynamic> json) {
     category = json["category"];

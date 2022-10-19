@@ -18,4 +18,18 @@ class Auctions_Provider {
       throw Exception("Ocurrió algo ${resp.statusCode}");
     }
   }
+
+  Future<List<ModelProducts>> getCategory(String change_category) async {
+    final resp = await http.get(Uri.parse(
+        "https://fakestoreapi.com/products/category/$change_category"));
+
+    if (resp.statusCode == 200) {
+      String body = utf8.decode(resp.bodyBytes);
+      final jsonData = jsonDecode(body);
+      final products = Products.fromJsonList(jsonData);
+      return products.items;
+    } else {
+      throw Exception("Ocurrió algo ${resp.statusCode}");
+    }
+  }
 }
